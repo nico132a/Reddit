@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <main>
+        <div class="top-row px-4">
+            <a href="/" target="_blank" class="left-align">Forside</a>
+            <a href="/Tilføjtråd" target="_blank" class="left-align">Tilføj tråd</a>
+        </div>
+
+        <article class="content px-4">
+            <h1 class="welcome-text">REDDIT</h1>
+            @Body
+        </article>
+    </main>
+</div>
+
+<style>
+    .welcome-text {
+        color: red;
+        font-size: 3em; 
+        text-align: center; 
+        margin-top: 20px; 
+    }
+</style>

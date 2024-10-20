@@ -1,0 +1,55 @@
+﻿@page "/"
+
+@using PostdataBlazor.Data
+@using shared.model
+@inject PostDataService postDataService
+@inject NavigationManager NavigationManager
+
+<PageTitle>forsiden</PageTitle>
+
+<TodoList></TodoList>
+
+@if (posts == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="post-column">
+        @foreach (var post in posts.OrderByDescending(p => p.CreatedAt))
+        {
+            <div class="post-content border p-3 mb-3" @onclick="() => GoToPostDetail(post.PostId)" style="cursor: pointer;">
+                <h4 class="post-title">@post?.Name</h4>
+                <p class="post-text">@post.Text</p>
+                <small class="text-muted">Posted on @post?.CreatedAt.ToShortDateString()</small>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private PostData[]? posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = (await postDataService.GetPosts())
+            .OrderByDescending(p => p.CreatedAt)
+            .ToArray();
+
+        postDataService.RefreshRequired += RefreshMe;
+    }
+
+    private async void RefreshMe()
+    {
+        posts = (await postDataService.GetPosts())
+            .OrderByDescending(p => p.CreatedAt)
+            .ToArray();
+
+        StateHasChanged();
+    }
+
+    private void GoToPostDetail(long postId)  
+    {
+        NavigationManager.NavigateTo($"/postdetail/{postId}");
+    }
+}

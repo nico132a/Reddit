@@ -1,0 +1,96 @@
+﻿@page "/TilføjTråd"
+
+@using shared.model
+
+@using PostdataBlazor.Data
+@inject PostDataService postDataService
+@inject NavigationManager NavigationManager
+
+<!-- Tilføjer nye post -->
+<div class="mt-5">
+    <h4>Tilføj tråd</h4>
+    <input type="text" class="form-control" placeholder="Titel" @bind="newPostTitle">
+    <textarea class="form-control mt-2" placeholder="Navn" @bind="newPostForfatter"></textarea>
+    <button class="btn btn-success mt-2" @onclick="AddPost">Submit Post</button>
+</div>
+
+<h3 class="mb-4">Posts</h3>
+
+@if (posts == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="post-column">
+        @foreach (var post in posts.OrderByDescending(p => p.CreatedAt))
+        {
+            <div class="post-content border p-3 mb-3" @onclick="() => GoToPostDetail(post.PostId)" style="cursor: pointer;">
+                <h4 class="post-title">@post?.Name</h4>
+                <p class="post-text">@post.Text</p>
+                <small class="text-muted">Posted on @post?.CreatedAt.ToShortDateString()</small>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private PostData[]? posts; 
+    private string newPostTitle = "";
+    private string newPostForfatter = "";
+   
+    protected override async Task OnInitializedAsync()
+    {
+        posts = (await postDataService.GetPosts())
+            .OrderByDescending(p => p.CreatedAt)
+            .ToArray();
+
+        postDataService.RefreshRequired += RefreshMe;
+    }
+
+
+    private async Task AddPost()
+    {
+        if (!string.IsNullOrWhiteSpace(newPostTitle) && !string.IsNullOrWhiteSpace(newPostForfatter))
+        {
+            var newPost = new PostData
+                {
+                    Name = newPostTitle,
+                    Text = newPostForfatter,
+                    CreatedAt = DateTime.Now,
+                    Value = 0,
+                    Comments = new List<Comment>()
+                };
+
+            await postDataService.AddPost(newPost);
+
+            
+            newPostTitle = "";
+            newPostForfatter = "";
+
+            await LoadPosts();
+
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadPosts()
+    {
+        posts = (await postDataService.GetPosts())
+            .OrderByDescending(p => p.CreatedAt) 
+            .ToArray(); 
+    }
+    private async void RefreshMe()
+    {
+        posts = (await postDataService.GetPosts())
+            .OrderByDescending(p => p.CreatedAt)
+            .ToArray();
+
+        StateHasChanged();
+    }
+
+    private void GoToPostDetail(long postId)
+    {
+        NavigationManager.NavigateTo($"/postdetail/{postId}");
+    }
+}
