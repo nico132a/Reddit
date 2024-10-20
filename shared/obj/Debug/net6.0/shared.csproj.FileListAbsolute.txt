@@ -1,0 +1,14 @@
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.csproj.AssemblyReference.cache
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.AssemblyInfoInputs.cache
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.AssemblyInfo.cs
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.csproj.CoreCompileInputs.cache
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\bin\Debug\net6.0\shared.deps.json
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\bin\Debug\net6.0\shared.runtimeconfig.json
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\bin\Debug\net6.0\shared.dll
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\bin\Debug\net6.0\shared.pdb
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.dll
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\refint\shared.dll
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.pdb
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\shared.genruntimeconfig.cache
+C:\Users\Nicol\OneDrive\Skrivebord\Projekt reddit\shared\obj\Debug\net6.0\ref\shared.dll
