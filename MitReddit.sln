@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "-api", "-api\-api.csproj", "{78E2273A-1C4F-48D9-846A-01D9AA40D9BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListBlazor", "TodoListBlazor\TodoListBlazor.csproj", "{675EA344-3A9A-455E-A6D9-0F243C934164}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shared", "shared\shared.csproj", "{1A40E4C7-B482-4697-9116-E8513AAB0569}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78E2273A-1C4F-48D9-846A-01D9AA40D9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E2273A-1C4F-48D9-846A-01D9AA40D9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E2273A-1C4F-48D9-846A-01D9AA40D9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E2273A-1C4F-48D9-846A-01D9AA40D9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675EA344-3A9A-455E-A6D9-0F243C934164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675EA344-3A9A-455E-A6D9-0F243C934164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675EA344-3A9A-455E-A6D9-0F243C934164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675EA344-3A9A-455E-A6D9-0F243C934164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A40E4C7-B482-4697-9116-E8513AAB0569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A40E4C7-B482-4697-9116-E8513AAB0569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A40E4C7-B482-4697-9116-E8513AAB0569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A40E4C7-B482-4697-9116-E8513AAB0569}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
